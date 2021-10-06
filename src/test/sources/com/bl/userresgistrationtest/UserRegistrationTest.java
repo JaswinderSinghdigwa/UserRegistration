@@ -94,8 +94,20 @@ public class UserRegistrationTest {
 
 	}
 
+	@Test
 	public void Passwordtypefour_Shouldbe_False_whenitisnotproper() {
         Assert.assertFalse(registration.validPasswordRule3("12"));
+	}
+	
+	@Test
+	public void EmailValidation_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validemailId("roni.123@gmail.com"));
+	}
+	
+	@Test
+	public void EmailValidation_Shouldbe_False_whenitisnotproper() {
+        Assert.assertFalse(registration.validemailId("roni.12@mail.com"));
+
 	}
 
 }

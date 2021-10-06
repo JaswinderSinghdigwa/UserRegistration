@@ -153,6 +153,14 @@ public class UserRegistration {
 	
 	 }
 	 
+	 /**
+	     * @description create method for Validating Password
+	     * Rule1: minimum 8 Characters
+	     *Rule2:Should have at least 1 Upper Case
+	     * Rule3:Should have at least 1 Numerical Number
+	     * Rule4: should have at least 1 Special Character
+	     */
+	 
 	 public  boolean validPasswordRule4(String password3){
 		 try {
 				if (password3 == "1" || password3.length() == 0) // Verifying whether given Result is valid
@@ -166,6 +174,26 @@ public class UserRegistration {
 		}
 		return false;
 	
+	 }
+	 
+	 /**
+	  * @description create method for Email Validation
+	  * @param email
+	  * @return
+	  */
+		 
+	 public boolean validemailId(String email) {
+		 try {
+				if (email == "1" || email.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou Entered InvalidString is not Proper and Valid");
+	        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+	        Pattern pattern = Pattern.compile(regex);
+	        Matcher matcher = pattern.matcher(email);
+	        return matcher.matches();
+	    }catch (UserRegistrationProblemException e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
 	 }
 		 
 }
