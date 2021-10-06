@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  */
 public class UserRegistration {
 	public static final Scanner scanner = new Scanner(System.in);
-
+	
 	/**
      * @description create method for First Name Validation
      * Rule: first name starts with Cap and has minimum 3 characters
@@ -28,6 +28,27 @@ public class UserRegistration {
 			Matcher matcher = pattern.matcher(firstname);
 			return matcher.matches();
         }
+    	catch(UserRegistrationProblemException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	return false;
+    }
+    
+    /**
+     * @description create method for First Name Validation
+     * Rule: first name starts with Cap and has minimum 3 characters
+     *
+     */
+    
+    public boolean validLastName(String lastname){
+    	try {
+			if (lastname == "1" || lastname.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou Entered Number or null is not Proper and Valid");
+	        String regex1 = "^[A-Z]{1}[a-z]{3,10}$";
+	        Pattern pattern1 = Pattern.compile(regex1);
+	        Matcher matcher1 = pattern1.matcher(lastname);
+	        return (matcher1.matches());
+    	}
     	catch(UserRegistrationProblemException e) {
     		System.out.println(e.getMessage());
     	}

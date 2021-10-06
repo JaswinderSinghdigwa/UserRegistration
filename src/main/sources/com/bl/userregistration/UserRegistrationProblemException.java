@@ -20,9 +20,4 @@ package com.bl.userregistration;
 	        super(message);
 	    }
 	    
-	    public static void main(String[] args) {
-	        System.out.println("Welcome to User Registration Program"); //Printing the Welcome Message
-	        UserRegistration userregistration = new UserRegistration();
-//	        userregistration.firstNameValidation();
-    }
 }

@@ -18,5 +18,18 @@ public class UserRegistrationTest {
 	     Assert.assertFalse(registration.firstNameValidation(""));
 
 	}
+	
+	@Test
+    public void Lastname_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validLastName("1"));
+
+    }
+
+	@Test
+	public void Lastname_Shouldbe_False_whenitisnotproper() {
+	     Assert.assertFalse(registration.validLastName(""));
+
+	}
+
 
 }
