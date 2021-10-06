@@ -30,6 +30,17 @@ public class UserRegistrationTest {
 	     Assert.assertFalse(registration.validLastName(""));
 
 	}
+	
+	@Test
+	public void Email_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validEmail(""));
 
+	}
+	
+	@Test
+	public void Email_Shouldbe_False_whenitisnotproper() {
+	     Assert.assertFalse(registration.validEmail("1"));
+
+	}
 
 }

@@ -54,4 +54,26 @@ public class UserRegistration {
     	}
     	return false;
     }
+    
+    /**
+     * @description create method for EmailAddress Validation
+     * Rules: Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with
+     * precise @ and . positions
+     * E.g. abc.xyz@bl.co.in
+     */
+    
+    public boolean validEmail(String email){
+    	try {
+			if (email == "1" || email.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou Entered Number or null is not Proper and Valid");
+	        String regex2 = "^A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$";
+	        Pattern pattern2 = Pattern.compile(regex2);
+	        Matcher matcher2 = pattern2.matcher(email);
+	        return matcher2.matches();
+    	}
+    	catch(UserRegistrationProblemException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	return false;
+    }
 }
