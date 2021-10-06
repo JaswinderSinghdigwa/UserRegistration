@@ -42,5 +42,18 @@ public class UserRegistrationTest {
 	     Assert.assertFalse(registration.validEmail("1"));
 
 	}
+	
+	@Test
+	public void Mobileno_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validPhoneNumber("919666983674"));
+
+	}
+	
+	@Test
+	public void Mobileno_Shouldbe_True_whenitisnotproper() {
+        Assert.assertTrue(registration.validPhoneNumber("91966698367421"));
+
+	}
+
 
 }

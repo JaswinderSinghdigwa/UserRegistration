@@ -66,10 +66,30 @@ public class UserRegistration {
     	try {
 			if (email == "1" || email.length() == 0) // Verifying whether given Result is valid
 					throw new UserRegistrationProblemException("\nYou Entered Number or null is not Proper and Valid");
-	        String regex2 = "^A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$";
+	        String regex2 = "^[a-z0-9]+(([.+-_][a-z0-9])?)+(@[a-z0-9]{1})+(.[a-z]{3,4})+((.[a-z]{2})?)$";
 	        Pattern pattern2 = Pattern.compile(regex2);
 	        Matcher matcher2 = pattern2.matcher(email);
 	        return matcher2.matches();
+    	}
+    	catch(UserRegistrationProblemException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	return false;
+    }
+    
+    /**
+     * @description Main method to create the objects and for calling the methods
+     * @param args
+     */
+    
+    public boolean validPhoneNumber(String mobileno){
+    	try {
+			if (mobileno == "1" || mobileno.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou InvalidString or null is not Proper and Valid");
+        String regex3 = "^[1-9]{2} [1-9][0-9]{9}$";
+        Pattern pattern3 = Pattern.compile(regex3);
+        Matcher matcher3 = pattern3.matcher(mobileno);
+        return matcher3.matches();
     	}
     	catch(UserRegistrationProblemException e) {
     		System.out.println(e.getMessage());
