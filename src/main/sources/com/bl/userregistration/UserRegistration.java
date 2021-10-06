@@ -116,6 +116,26 @@ public class UserRegistration {
     		System.out.println(e.getMessage());
     	}
     	return false;
-    	
+    }
+    
+	/**
+	 * @description create method for Validating Password
+	 * Rule1: minimum 8 Characters
+	 *Rule2:Should have at least 1 Upper Case
+	 */
+
+    public boolean validPasswordRule2(String password1){
+    	try {
+			if (password1 == "1" || password1.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou Entered InvalidString is not Proper and Valid");
+        String regex5 = "^[A-Z]{1}+[a-zA-z0-9]{8,}$";
+        Pattern pattern5 = Pattern.compile(regex5);
+        Matcher matcher5 = pattern5.matcher(password1);
+        return (matcher5.matches());
+    	}
+    	catch(UserRegistrationProblemException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	return false;
     }
 }

@@ -66,6 +66,18 @@ public class UserRegistrationTest {
         Assert.assertFalse(registration.validPasswordRule1(""));
 
 	}
+	
+	@Test
+	public void Passwordtypetwo_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validPasswordRule1("Password@12"));
+
+	}
+	
+	@Test
+	public void Passwordtypetwo_Shouldbe_False_whenitisnotproper() {
+        Assert.assertFalse(registration.validPasswordRule1("12"));
+
+	}
 
 
 }
