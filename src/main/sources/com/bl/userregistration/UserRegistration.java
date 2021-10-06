@@ -96,4 +96,26 @@ public class UserRegistration {
     	}
     	return false;
     }
+    
+    /**
+     * @description create method for Validating Password
+     * Rule1: minimum 8 Characters
+     *
+     */
+    
+    public boolean validPasswordRule1(String password){
+    	try {
+			if (password == "1" || password.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou Entered Number or null is not Proper and Valid");
+        String regex4 = "^[A-Z0-9a-z]{8,}$";
+        Pattern pattern4 = Pattern.compile(regex4);
+        Matcher matcher4 = pattern4.matcher(password);
+        return matcher4.matches();
+    	}
+    	catch(UserRegistrationProblemException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	return false;
+    	
+    }
 }

@@ -45,13 +45,25 @@ public class UserRegistrationTest {
 	
 	@Test
 	public void Mobileno_Shouldbe_True_whenitisproper() {
-        Assert.assertTrue(registration.validPhoneNumber("919666983674"));
+        Assert.assertTrue(registration.validPhoneNumber(""));
 
 	}
 	
 	@Test
-	public void Mobileno_Shouldbe_True_whenitisnotproper() {
-        Assert.assertTrue(registration.validPhoneNumber("91966698367421"));
+	public void Mobileno_Shouldbe_False_whenitisnotproper() {
+        Assert.assertTrue(registration.validPhoneNumber("1"));
+
+	}
+	
+	@Test
+	public void Passwordtypeone_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validPasswordRule1("1"));
+
+	}
+	
+	@Test
+	public void Passwordtypeone_Shouldbe_False_whenitisproper() {
+        Assert.assertFalse(registration.validPasswordRule1(""));
 
 	}
 
