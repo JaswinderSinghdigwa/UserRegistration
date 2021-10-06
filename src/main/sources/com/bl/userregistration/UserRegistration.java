@@ -152,5 +152,20 @@ public class UserRegistration {
 		return false;
 	
 	 }
+	 
+	 public  boolean validPasswordRule4(String password3){
+		 try {
+				if (password3 == "1" || password3.length() == 0) // Verifying whether given Result is valid
+					throw new UserRegistrationProblemException("\nYou Entered InvalidString is not Proper and Valid");
+	        String regex6 = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@~#$%^&*()]).{8,}$";
+	        Pattern pattern6 = Pattern.compile(regex6);
+	        Matcher matcher6 = pattern6.matcher(password3);
+	        return matcher6.matches();
+	    }catch (UserRegistrationProblemException e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
+	
+	 }
 		 
 }

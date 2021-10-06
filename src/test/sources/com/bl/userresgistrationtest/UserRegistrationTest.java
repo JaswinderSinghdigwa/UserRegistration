@@ -78,6 +78,24 @@ public class UserRegistrationTest {
         Assert.assertFalse(registration.validPasswordRule1("12"));
 
 	}
+	@Test
+	public void Passwordtypethree_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validPasswordRule3("123passW@12"));
 
+	}
+	
+	public void Passwordtypethree_Shouldbe_False_whenitisnotproper() {
+        Assert.assertFalse(registration.validPasswordRule3("12"));
+	}
+	
+	@Test
+	public void Passwordtypefour_Shouldbe_True_whenitisproper() {
+        Assert.assertTrue(registration.validPasswordRule3("123passW@12."));
+
+	}
+
+	public void Passwordtypefour_Shouldbe_False_whenitisnotproper() {
+        Assert.assertFalse(registration.validPasswordRule3("12"));
+	}
 
 }
