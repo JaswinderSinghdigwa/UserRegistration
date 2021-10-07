@@ -9,19 +9,19 @@ package com.bl.moodanalyser;
 
 public class MoodAnalyser {
 
-    public static boolean analyseMood(String moodanalyser) {
+    public static  String analyseMood(String moodanalyser) throws MoodAnalyserException {
     	try {
-	    	if (moodanalyser.length() == 0) {
-	    		throw new MoodAnalyserException("\nNull user input");
-	    	}
-	        if (moodanalyser.toLowerCase().contains("happy")) {
-	            return true;
-	        } else if (moodanalyser.toLowerCase().contains("sad")) {
-	            return false;
-	        } else return (Boolean) null;
-    	}catch (MoodAnalyserException e) {
-    		System.out.print(e.getMessage());
-    	}
-    	return false;
+            if (moodanalyser.length() == 0) {
+                throw new MoodAnalyserException("Invalid Input");
+            } else if (moodanalyser.toLowerCase().contains("happy")) {
+                return "Entry Successful";
+            } else if (moodanalyser.toLowerCase().contains("sad")) {
+                return "Entry Failed";
+            } else {
+                return "Invalid Input";
+            }
+        } catch (MoodAnalyserException e) {
+            throw new MoodAnalyserException("Invalid mood");
+        }
     }
 }
