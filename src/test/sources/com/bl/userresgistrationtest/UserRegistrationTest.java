@@ -23,7 +23,7 @@ public class UserRegistrationTest {
 	@Test
 	public void Firstname_Shouldbe_False_whenitisnotproper() {
 		try {
-			boolean result = registration.firstNameValidation("Singh");
+			boolean result = registration.firstNameValidation("Si");
 			Assert.assertEquals(result, false);
 		} catch (UserRegistrationProblemException e) {
 			System.out.println(e);
@@ -35,7 +35,7 @@ public class UserRegistrationTest {
 	public void Lastname_Shouldbe_True_whenitisproper() {
 		try {
 			boolean result = registration.lastNameValidation("Singh");
-			Assert.assertEquals(result, false);
+			Assert.assertEquals(result, true);
 		} catch (UserRegistrationProblemException e) {
 			System.out.println(e);
 		}
