@@ -3,57 +3,76 @@ package com.bl.userresgistrationtest;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.bl.moodanalyser.MoodAnalyser;
 import com.bl.userregistration.UserRegistration;
+import com.bl.userregistration.UserRegistrationProblemException;
 
 public class UserRegistrationTest {
 	UserRegistration registration = new UserRegistration();
-	
+
 	@Test
-    public void Firstname_Shouldbe_True_whenitisproper() {
-     Assert.assertTrue(registration.firstNameValidation("1"));
-    }
-	
+	public void Firstname_Shouldbe_True_whenitisproper() {
+		try {
+			boolean result = registration.firstNameValidation("Jaswinder");
+			Assert.assertEquals(true, result);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+	}
+
 	@Test
 	public void Firstname_Shouldbe_False_whenitisnotproper() {
-	     Assert.assertFalse(registration.firstNameValidation(""));
+		try {
+			boolean result = registration.firstNameValidation("Singh");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
 
 	}
-	
-	@Test
-    public void Lastname_Shouldbe_True_whenitisproper() {
-        Assert.assertTrue(registration.validLastName("1"));
 
-    }
+	@Test
+	public void Lastname_Shouldbe_True_whenitisproper() {
+		try {
+			boolean result = registration.lastNameValidation("Singh");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
 
 	@Test
 	public void Lastname_Shouldbe_False_whenitisnotproper() {
-	     Assert.assertFalse(registration.validLastName(""));
+		try {
+			boolean result = registration.lastNameValidation("Don");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
 
 	}
-	
+
 	@Test
 	public void Email_Shouldbe_True_whenitisproper() {
-        Assert.assertTrue(registration.validEmail(""));
+		try {
+			boolean result = registration.validEmail("abc@gmail.com.in");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
 
 	}
-	
+
 	@Test
 	public void Email_Shouldbe_False_whenitisnotproper() {
-	     Assert.assertFalse(registration.validEmail("1"));
+		try {
+			boolean result = registration.validEmail("#abc@gmail.com.in");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
 
 	}
-	
-	@Test
-	public void Mobileno_Shouldbe_True_whenitisproper() {
-        Assert.assertTrue(registration.validPhoneNumber("919666983674"));
-
-	}
-	
-	@Test
-	public void Mobileno_Shouldbe_True_whenitisnotproper() {
-        Assert.assertTrue(registration.validPhoneNumber("91966698367421"));
-
-	}
-
 
 }
