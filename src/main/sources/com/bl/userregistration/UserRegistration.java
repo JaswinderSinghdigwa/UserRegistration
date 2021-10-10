@@ -12,18 +12,15 @@ public class UserRegistration {
 	public static final Scanner scanner = new Scanner(System.in);
 
 	/**
-<<<<<<< HEAD
 	 * @throws UserRegistrationProblemException 
 =======
 	 * @throws UserRegistrationProblemException
->>>>>>> UC-10-moodanalyser
 	 * @description create method for First Name Validation Rule: first name starts
 	 *              with Cap and has minimum 3 characters
 	 *
 	 */
 
 	public boolean firstNameValidation(String firstname) throws UserRegistrationProblemException {
-<<<<<<< HEAD
 	        if (firstname == null || firstname.length() == 0) 
 	            throw new UserRegistrationProblemException("You Entered Input is Invalid");
 	            String regex = "^[A-Z]{1}[a-z]{2,}$";
@@ -31,7 +28,8 @@ public class UserRegistration {
 	            Matcher matcher = pattern.matcher(firstname);
 	            return matcher.matches();
 	    }
-=======
+	
+	public boolean firstNameValidation1(String firstname) throws UserRegistrationProblemException {
 		// Matching the given name with regular expression
 		if (firstname == "1" || firstname.length() == 0) // Verifying whether given Result is valid
 			throw new UserRegistrationProblemException("\nYou Entered Number or null is not Proper and Valid");
@@ -165,5 +163,4 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
->>>>>>> UC-10-moodanalyser
 }

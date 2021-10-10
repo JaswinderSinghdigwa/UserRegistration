@@ -14,40 +14,25 @@ public class UserRegistrationTest {
 	@Test
 	public void Firstname_Shouldbe_True_whenitisproper() {
 		try {
-<<<<<<< HEAD
             boolean result = registration.firstNameValidation("");
             Assert.assertEquals(true, result);
         } catch (UserRegistrationProblemException e) {
             System.out.println(e);
         }
-=======
-			boolean result = registration.firstNameValidation("Jaswinder");
-			Assert.assertEquals(true, result);
-		} catch (UserRegistrationProblemException e) {
-			System.out.println(e);
-		}
->>>>>>> UC-10-moodanalyser
 	}
 
 	@Test
 	public void Firstname_Shouldbe_False_whenitisnotproper() {
 		try {
-<<<<<<< HEAD
-            boolean result = registration.firstNameValidation("");
-        	Assert.assertEquals(result,false);
-        } catch (UserRegistrationProblemException e) {
-            System.out.println(e);
-        }
-	
-	}
-=======
-			boolean result = registration.firstNameValidation("i");
+
+			boolean result = registration.firstNameValidation("");
 			Assert.assertEquals(result, false);
 		} catch (UserRegistrationProblemException e) {
 			System.out.println(e);
 		}
 
 	}
+
 
 	@Test
 	public void Lastname_Shouldbe_True_whenitisproper() {
@@ -178,7 +163,7 @@ public class UserRegistrationTest {
 		}
 
 	}
-	
+
 	@Test
 	public void Passwordtypefour_Shouldbe_True_whenitisproper() {
 		try {
@@ -200,7 +185,7 @@ public class UserRegistrationTest {
 		}
 
 	}
-	
+
 	@Test
 	public void EmailValidation_Shouldbe_True_whenitisproper() {
 		try {
@@ -211,7 +196,7 @@ public class UserRegistrationTest {
 		}
 
 	}
-	
+
 	@Test
 	public void EmailValidation_Shouldbe_False_whenitisnotproper() {
 		try {
@@ -233,7 +218,7 @@ public class UserRegistrationTest {
         }
     }
 
-    @Test
+	@Test
     public void givenMessage_EMPTY_ShouldReturnMoodAnalyserException()  {
         try {
            String fail = MoodAnalyser.analyseMood("");
@@ -243,5 +228,4 @@ public class UserRegistrationTest {
 
         }
     }
->>>>>>> UC-10-moodanalyser
 }
