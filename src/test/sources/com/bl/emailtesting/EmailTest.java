@@ -58,7 +58,6 @@ public class EmailTest {
     @Test
     public void givenEmailIds_withExpectedResult_shouldPassAllTheTestCases() {
         try {
-            UserRegistration userRegistration = new UserRegistration();
             boolean result = userRegistration.validemailId(this.email);
             Assert.assertEquals(this.expectedResult, result);
         } catch (UserRegistrationProblemException e) {
@@ -73,7 +72,7 @@ public class EmailTest {
     public void givenEmail1_null_ShouldThrowUserRegistrationException() {
       
         try {
-            userRegistration.validemailId(null);
+            userRegistration.validemailId("sasa");
             
         } catch (UserRegistrationProblemException e) {
             System.out.println(e);
