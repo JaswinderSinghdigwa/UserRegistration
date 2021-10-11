@@ -121,5 +121,112 @@ public class UserRegistrationTest {
 
 	}
 
+	@Test
+	public void Passwordtypetwo_Shouldbe_True_whenitisproper() {
+		try {
+			boolean result = userregistration.validPasswordRule2("Passwd@");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+
+	@Test
+	public void Passwordtypetwo_Shouldbe_False_whenitisproper() {
+		try {
+			boolean result = userregistration.validPasswordRule2("9qwqw");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+
+	@Test
+	public void Passwordtypethree_Shouldbe_True_whenitisproper() {
+		try {
+			boolean result = userregistration.validPasswordRule2("Passwd@");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+
+	@Test
+	public void Passwordtypethree_Shouldbe_False_whenitisproper() {
+		try {
+			boolean result = userregistration.validPasswordRule2("9qwqw");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
 	
+	@Test
+	public void Passwordtypefour_Shouldbe_True_whenitisproper() {
+		try {
+			boolean result = userregistration.validPasswordRule3("Passwd@12");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+
+	@Test
+	public void Passwordtypefour_Shouldbe_False_whenitisproper() {
+		try {
+			boolean result = userregistration.validPasswordRule3("9qwqw");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+	
+	@Test
+	public void EmailValidation_Shouldbe_True_whenitisproper() {
+		try {
+			boolean result = userregistration.validemailId("abc2@gmail.com");
+			Assert.assertEquals(result, true);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+	
+	@Test
+	public void EmailValidation_Shouldbe_False_whenitisnotproper() {
+		try {
+			boolean result = userregistration.validemailId("Pas");
+			Assert.assertEquals(result, false);
+		} catch (UserRegistrationProblemException e) {
+			System.out.println(e);
+		}
+
+	}
+
+	@Test
+    public void givenMessage_NULL_ShouldReturnMoodAnalyserException()  {
+        try {
+            String sucesss  = MoodAnalyser.analyseMood(null);
+            Assert.assertEquals("Entry Successful", sucesss);
+        } catch (MoodAnalyserException e) {
+           System.out.print(e);
+        }
+    }
+
+    @Test
+    public void givenMessage_EMPTY_ShouldReturnMoodAnalyserException()  {
+        try {
+           String fail = MoodAnalyser.analyseMood("");
+           Assert.assertEquals("Entry Failed", fail);
+        } catch (MoodAnalyserException e) {
+            System.out.print(e);
+
+        }
+    }
 }
